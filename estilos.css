@@ -1,0 +1,9 @@
+.imagen-centrada {
+    /* Convierte la imagen en un elemento de bloque para que pueda tener margen */
+    display: block;
+    /* Aplica margen automático a los lados, centrando el elemento */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
