@@ -4,33 +4,25 @@
     <title>L4D2_guia.com</title> <!-- Título que aparece en la pestaña del navegador -->
     <meta charset="UTF-8">
 </head>
-
 <body>
-    <!-- Encabezado principal con un menú de navegación -->
     <header>
-        <!-- Sección de introducción -->
         <section id="inicio">
             <h1>Left 4 Dead 2 - La guia definitiva</h1>
-            <p><em>En esta página encontrarás todo lo que necesitas conocer para adentrarte en este clásico del género de supervivencia cooperativa, como lo es la historia, 
+            <p id="descripcion"><em>En esta página encontrarás todo lo que necesitas conocer para adentrarte en este clásico del género de supervivencia cooperativa, como lo es la historia, 
                 personajes, escenarios, equipamiento, entre otros</em></p> 
-            <hr>
         </section>
         <nav>
-            <!-- Hipervínculos internos que llevan a secciones específicas -->
-        
-            <a href="#personajes">Personajes</a>
-            <a href="#infectados">Infectados Especiales</a>
-            <a href="#armas">Armas y Equipamiento</a>
-            <a href="#campanas">Campañas</a>
-            <a href="#trucos">Comandos y Trucos</a>
+            <a href="supervivientes.html">Supervivientes</a>
+            <a href="infectados.html">Infectados</a>
+            <a href="campañas.html">Campañas</a>
+            <a href="armasYobjetos.html">Armas y objetos</a>
         </nav>
         <link rel="stylesheet" href="estilos.css">
-        <hr>
     </header>
 
     <main>
-        <!-- Sección de personajes -->
-         <section id="queEs">
+         <section>
+            <hr>
             <h2>¿Qué es Left 4 dead 2?</h2>
             <p>
                 Es un videojuego de disparos en primera persona de tipo acción creado por la compañía Valve. Corresponde a 
@@ -44,8 +36,8 @@
             <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/550/header.jpg?t=1745368562"
                 alt="Logo de L4D2" style="width:1000px;height:auto;" class="imagen-centrada">
          </section>
-         <section id="historia">
-            <br>
+         <section>
+            <hr>
             <h2>¿En qué se sitúa L4D2?</h2>
             <p>
                 Left 4 Dead 2 se desarrolla tres semanas después del primer brote viral que se ha expandido en el sur de los 
@@ -59,7 +51,7 @@
                 alt="Logo de L4D2" style="width:1000px;height:auto;" class="imagen-centrada">
          </section>
          <section>
-            <br>
+            <hr>
             <h2>Características generales</h2>
             <ul>
                 <li>Las campañas de Left 4 Dead 2 tienen la misma estructura básica que las del <em>Left 4 Dead</em>: una cantidad 
@@ -80,29 +72,13 @@
          <section>
             <hr>
             <h2>
-                <a href="registrar.html">Regístrate aquí</a> 
+                <a href="registrar.html">Regístrarse</a> 
                 <a href="#inicio">Inicio</a>
             </h2>
-            <hr>
          </section>
          <!-- Hasta este punto será la página principal, lo demás se enviará a otras páginas-->
-        <section id="personajes">
-            <h2>Los Supervivientes</h2>
-            <p>Los protagonistas son un grupo de cuatro supervivientes inmunes al virus, cada uno con su propia historia.</p>
-            <ul> 
-                <!-- Lista no ordenada -->
-                <li><strong>Coach:</strong> Un ex-entrenador de fútbol americano, conocido por su liderazgo y su gran tamaño.</li>
-                <li><strong>Rochelle:</strong> Una periodista que estaba cubriendo el brote cuando quedó atrapada con los demás.</li>
-                <li><strong>Ellis:</strong> Un joven mecánico con un espíritu aventurero y una actitud positiva.</li>
-                <li><strong>Nick:</strong> Un estafador cínico que inicialmente se resiste a la idea de trabajar en equipo.</li>
-            </ul>
-            <img src="https://images.steamusercontent.com/ugc/876375900175996021/0D3B579ECD073E3CC9BCE3D9DBF384F33FE03460/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
-                 alt="Supervivientes del juego" style="width:800px;height:auto;">
-        </section>
-
-        <hr> 
-
-        <!-- Sección de infectados -->
+        
+        <!--
         <section id="infectados">
             <h2>Los Infectados Especiales</h2>
             <p>Además de las hordas de zombies comunes, los supervivientes deben enfrentar a varios "infectados especiales", que poseen habilidades únicas y peligrosas.</p>
@@ -122,12 +98,11 @@
         
         <hr>
 
-        <!-- Sección de armas -->
         <section id="armas">
             <h2>Armas y Equipamiento</h2>
             <p>El arsenal de Left 4 Dead 2 se divide en varias categorías, entre ellas:</p>
             <h3>Tabla de Armas</h3>
-            <!-- Se insertan 2 tablas -->
+           
             <table border="1">
                  <tr>
                     <th>Nombre</th>
@@ -223,7 +198,6 @@
 
         <hr>
 
-        <!-- Sección de campañas -->
         <section id="campanas">
             <h2>Campañas Principales</h2>
             <p>El juego base cuenta con 5 campañas, cada una con su propia historia y ambiente:</p>
@@ -239,7 +213,7 @@
         </section>
         
         <hr>
-        <!-- Sección de trucos -->
+        
         <section id="trucos">
             <h2>Comandos y Trucos (PC)</h2>
             <p>Para activar los trucos, primero debes habilitar la consola de desarrollador en las opciones del juego. Luego, presiona la tecla (~) durante el juego e introduce los siguientes comandos.</p>
@@ -254,17 +228,17 @@
             </ul>
         </section>
     </main>
-    
-    <!-- Pie de página -->
+        -->
     <footer>
         <hr>
-        <p>
+        <p class="contacto">
+            <em>
             Página creada por: Gian Franco Apaza Quispe <br>
-            Curso: Introducción al Desarrollo Web - EPIS UNSA 2025 <br>
+            Curso: Introducción al Desarrollo Web - UNSA 2025 <br>
             Número de contacto: 901140072
+            </em>
         </p>
     </footer>
-
 </body>
 </html>
 
