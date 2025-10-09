@@ -1,27 +1,35 @@
 .imagen-centrada {
     /* Convierte la imagen en un elemento de bloque para que pueda tener margen */
     display: block;
-    /* Aplica margen automático a los lados, centrando el elemento */
-    margin-left: auto;
-    margin-right: auto;
+    margin: 30px auto;
+    border: 4px solid rgba(240, 248, 255, 0.635);
+    border-radius: 15px;
 }
 
 body {
     background-color: black;
 }
 
+header {
+    margin: 10px 0; 
+}
+
 #inicio {
     text-align: center;
     font-weight: bold;
     font-size: 35px; 
-    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(81, 68, 68, 0.525);
+    border-radius: 15px;
     color: red;
-    margin: 0;
-    padding: 20px 0; 
+    margin: 5px 0 15px 0;
+    padding: 18px 0; 
+    border: 2px;
+    
 }
 
 #descripcion {
-    color: white;
+    color: aliceblue;
     font-size: 20px; 
 }
 
@@ -29,16 +37,37 @@ nav {
     font-weight: bold;
     background-color: #195206;
     padding: 20px;
-    margin: 0;
+    margin: 20px 0px 18px 0px;
+    text-align: center;
+    position: sticky; /*Mantiene fija la barra de navegación*/
+    top: 0; /*Cuando el borde superior esté a 0 píxeles de distancia 
+    del borde superior de la ventana de visualización se comporta como fixed*/
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 a {
     color: aliceblue;
     font-size: 20px;
+    padding: 15px;
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+    background-color: rgb(17, 159, 20);
+    transition: all 0.7s ease;
+}
+
+a:visited {
+    color: rgb(39, 217, 60);
 }
 
 section, footer {
     background-color: rgba(81, 68, 68, 0.525);
+    border-radius: 15px;
+    border: 4px solid #195206;
+    margin: 30px; 
+
 }
 
 h2 {
@@ -46,16 +75,50 @@ h2 {
     color: red;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 0.5px; 
+    margin: 13px 0 0 18px;
 }
 
 p, ul {
-    color: aliceblue;
-    font-size: 18px;
+    color: rgba(240, 248, 255, 0.635);
+    font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 18px;
+    letter-spacing: 0.3px;
 }
 
 .contacto {
     font-size: 16px;
+}
+/*Lo principalmente usado para la página principal*/
+
+/*Algunos estilos para las otras páginas*/
+div {
+    color: rgba(240, 248, 255, 0.635);
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 15px;
+
+}
+
+.titulos {
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 70px; 
+    color: red;
+    background-color: rgba(81, 68, 68, 0.525);
+    border-radius: 15px;
+    border: 2px;
+    margin: 25px 0;
+    padding: 15px;
+}
+
+h3 {
+    color: rgba(240, 248, 255, 0.635);
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 18px;
+    letter-spacing: 0.3px; 
 }
 
 
