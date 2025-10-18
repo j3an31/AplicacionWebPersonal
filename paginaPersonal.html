@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>L4D2_guia.com</title> <!-- Título que aparece en la pestaña del navegador -->
+    <title>L4D2 - Guia Definitiva</title> <!-- Título que aparece en la pestaña del navegador -->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
     <header>
@@ -11,89 +13,79 @@
             <p id="descripcion"><em>En esta página encontrarás todo lo que necesitas conocer para adentrarte en este clásico del género de supervivencia cooperativa, como lo es la historia, 
                 personajes, escenarios, equipamiento, entre otros</em></p> 
         </figure>
-        <link rel="stylesheet" href="estilos.css">
     </header>
     <!--Se mueve <nav> fuera de <header> para que sea hijo directo de body ya que es un contenedor más grande-->
     <nav>
-            <a href="supervivientes.html">Supervivientes</a>
-            <a href="infectados.html">Infectados</a>
-            <a href="campañas.html">Campañas</a>
-            <a href="armasYobjetos.html">Armas y objetos</a>
+        <a href="paginaPersonal.html">Inicio</a>
+        <a href="supervivientes.html">Supervivientes</a>
+        <a href="infectados.html">Infectados</a>
+        <a href="campañas.html">Campañas</a>
+        <a href="armasYobjetos.html">Armas y objetos</a>
     </nav>
     <main>
-         <section>
-            <h2>¿Qué es Left 4 dead 2?</h2>
-            <p>
-                Es un videojuego de disparos en primera persona de tipo acción creado por la compañía Valve. Corresponde a 
-                la secuela de Left 4 Dead y se lanzó al mercado el 17 de noviembre de 2009 en Estados Unidos y Latinoamérica. 
-                Esta secuela, al igual que su predecesor, está disponible para PC y para la consola Xbox 360. El 14 de diciembre 
-                de 2009 fue anunciado el primer contenido descargable para esta secuela: una nueva campaña llamada "Defunción", 
-                que se desarrolla entre las dos primeras campañas del juego. Aquí se reúnen los protagonistas del primer 
-                Left 4 Dead (Francis, Louis y Zoey) con los supervivientes de esta secuela. Bill no aparece con vida, ya que 
-                se sacrificó para que los demás siguieran a salvo. Salió a la luz el 22 de abril de 2010.
-            </p>
-            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/550/header.jpg?t=1745368562"
-                alt="Logo de L4D2" style="width:900px;height:auto;" class="imagen-centrada">
-         </section>
-         <section>
-            <h2>¿En qué se sitúa L4D2?</h2>
-            <p>
-                Left 4 Dead 2 se desarrolla tres semanas después del primer brote viral que se ha expandido en el sur de los 
-                Estados Unidos, infectando los territorios entre Georgia y Luisiana. La infección ya ha cobrado las vidas de 
-                millones de personas y sus mutaciones extraordinarias siguen apareciendo. La Agencia de Emergencia y Defensa 
-                Civil (más conocida como la CEDA) ha aumentado las estrictas normas de cuarentena para evitar que el virus se 
-                siga propagando hacia el resto del país y al mismo tiempo, ayudar a los pocos supervivientes que quedan en 
-                la zona para que puedan ser evacuados fuera del país o a terrenos donde la infección no haya llegado.
-            </p>
-            <img src="https://preview.redd.it/yqqr03jca8c71.jpg?width=1080&crop=smart&auto=webp&s=3709c5b2bf175301b1f9b048daf99579efe55235"
-                alt="Logo de L4D2" style="width:900px;height:auto;" class="imagen-centrada">
-         </section>
-         <section>
-            <h2>Características generales</h2>
+        <aside class="navInterna">
             <ul>
-                <li>Las campañas de Left 4 Dead 2 tienen la misma estructura básica que las del <em>Left 4 Dead</em>: una cantidad 
-                    determinada de capítulos por campaña (cada una separada por un refugio) y el clímax, que dura entre 
-                    cinco y diez minutos hasta ser rescatados.</li> <br>
-                <li>El juego cuenta con los cuatro modos de su predecesor: el <strong>Un jugador</strong> (en el que se juega un solo jugador), 
-                    el <strong>Campaña</strong>(en el que se juega en línea con otros jugadores), el <strong>Enfrentamiento</strong>(podemos jugar como infectados) 
-                    y el <strong>Supervivencia</strong>(en el que hay que sobrevivir el mayor tiempo posible).</li> <br>
-                <li>También se han creado dos nuevos modos de juego: el primero llamado <strong>Búsqueda</strong>, en el cual los supervivientes deben encontrar latas de gasolina
-                    para hacer funcionar un generador, mientras que los infectados tienen que evitar a toda costa que los supervivientes logren su cometido 
-                    (todo esto con el tiempo en contra). El segundo es el modo <strong>Realista</strong>, en el que hay que jugar las mismas campañas, pero con la diferencia 
-                    de que los supervivientes no brillan si se encuentran muy lejos, ni tampoco se avisa al equipo quién está siendo atacado por un infectado especial.</li> <br>
-                <li>Lo que hace que este juego sea más atractivo respecto a su predecesor es la mejorada inteligencia artificial, apodada el <em>AI Director 2.0</em>. Ésta no sólo 
-                    es la responsable de regular la cantidad de infectados por campaña, si no que además altera los caminos que los supervivientes deben tomar para llegar 
-                    a un refugio y también controla el clima de forma radical. </li>
+                <li><a href="#ConceptoL4D2">¿Qué es Left 4 dead 2?</a></li>
+                <li><a href="#contextoL4D2">¿En qué se sitúa L4D2?</a></li>
+                <li><a href="#caracteristicasL4D2">Características generales</a></li>
             </ul>
-         </section>
-         <section>
-            <h2>
-                <a href="registrar.html">Regístrarse</a> 
-                <a href="#inicio">Inicio</a>
-            </h2>
-         </section>
+        </aside>
+        <div class="contenido">
+            <section id="ConceptoL4D2">
+                <h2>¿Qué es Left 4 dead 2?</h2>
+                <p>
+                    Es un videojuego de disparos en primera persona de tipo acción creado por la compañía Valve. Corresponde a 
+                    la secuela de Left 4 Dead y se lanzó al mercado el 17 de noviembre de 2009 en Estados Unidos y Latinoamérica. 
+                    Esta secuela, al igual que su predecesor, está disponible para PC y para la consola Xbox 360. El 14 de diciembre 
+                    de 2009 fue anunciado el primer contenido descargable para esta secuela: una nueva campaña llamada "Defunción", 
+                    que se desarrolla entre las dos primeras campañas del juego. Aquí se reúnen los protagonistas del primer 
+                    Left 4 Dead (Francis, Louis y Zoey) con los supervivientes de esta secuela. Bill no aparece con vida, ya que 
+                    se sacrificó para que los demás siguieran a salvo. Salió a la luz el 22 de abril de 2010.
+                </p>
+                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/550/header.jpg?t=1745368562"
+                    alt="Logo de L4D2" style="width:900px;height:auto;" class="imagen-centrada">
+            </section>
+            <section id="contextoL4D2">
+                <h2>¿En qué se sitúa L4D2?</h2>
+                <p>
+                    Left 4 Dead 2 se desarrolla tres semanas después del primer brote viral que se ha expandido en el sur de los 
+                    Estados Unidos, infectando los territorios entre Georgia y Luisiana. La infección ya ha cobrado las vidas de 
+                    millones de personas y sus mutaciones extraordinarias siguen apareciendo. La Agencia de Emergencia y Defensa 
+                    Civil (más conocida como la CEDA) ha aumentado las estrictas normas de cuarentena para evitar que el virus se 
+                    siga propagando hacia el resto del país y al mismo tiempo, ayudar a los pocos supervivientes que quedan en 
+                    la zona para que puedan ser evacuados fuera del país o a terrenos donde la infección no haya llegado.
+                </p>
+                <img src="https://preview.redd.it/yqqr03jca8c71.jpg?width=1080&crop=smart&auto=webp&s=3709c5b2bf175301b1f9b048daf99579efe55235"
+                    alt="Logo de L4D2" style="width:900px;height:auto;" class="imagen-centrada">
+            </section>
+            <section>
+                <h2 id="caracteristicasL4D2">Características generales</h2>
+                <ul>
+                    <li>Las campañas de Left 4 Dead 2 tienen la misma estructura básica que las del <em>Left 4 Dead</em>: una cantidad 
+                        determinada de capítulos por campaña (cada una separada por un refugio) y el clímax, que dura entre 
+                        cinco y diez minutos hasta ser rescatados.</li> <br>
+                    <li>El juego cuenta con los cuatro modos de su predecesor: el <strong>Un jugador</strong> (en el que se juega un solo jugador), 
+                        el <strong>Campaña</strong>(en el que se juega en línea con otros jugadores), el <strong>Enfrentamiento</strong>(podemos jugar como infectados) 
+                        y el <strong>Supervivencia</strong>(en el que hay que sobrevivir el mayor tiempo posible).</li> <br>
+                    <li>También se han creado dos nuevos modos de juego: el primero llamado <strong>Búsqueda</strong>, en el cual los supervivientes deben encontrar latas de gasolina
+                        para hacer funcionar un generador, mientras que los infectados tienen que evitar a toda costa que los supervivientes logren su cometido 
+                        (todo esto con el tiempo en contra). El segundo es el modo <strong>Realista</strong>, en el que hay que jugar las mismas campañas, pero con la diferencia 
+                        de que los supervivientes no brillan si se encuentran muy lejos, ni tampoco se avisa al equipo quién está siendo atacado por un infectado especial.</li> <br>
+                    <li>Lo que hace que este juego sea más atractivo respecto a su predecesor es la mejorada inteligencia artificial, apodada el <em>AI Director 2.0</em>. Ésta no sólo 
+                        es la responsable de regular la cantidad de infectados por campaña, si no que además altera los caminos que los supervivientes deben tomar para llegar 
+                        a un refugio y también controla el clima de forma radical. </li>
+                </ul>
+            </section>
+            <section>
+                <h2>
+                    <a href="registrar.html">Regístrarse</a> 
+                    <a href="#inicio">Inicio</a>
+                </h2>
+            </section>
+        
          <!-- Hasta este punto será la página principal, lo demás se enviará a otras páginas-->
         
         <!--
-        <section id="infectados">
-            <h2>Los Infectados Especiales</h2>
-            <p>Además de las hordas de zombies comunes, los supervivientes deben enfrentar a varios "infectados especiales", que poseen habilidades únicas y peligrosas.</p>
-            <ul>
-                <li><strong>Charger:</strong> Un infectado musculoso que carga contra un superviviente para aplastarlo contra el suelo.</li>
-                <li><strong>Jockey:</strong> Un infectado pequeño y jorobado que salta sobre los supervivientes y los dirige a su antojo.</li>
-                <li><strong>Spitter:</strong> Una infectada que escupe bilis ácida que daña a los supervivientes que se encuentran en su charco.</li>
-                <li><strong>Smoker:</strong> Atrapa a los supervivientes con su lengua y los arrastra hacia él.</li>
-                <li><strong>Hunter:</strong> Un ágil infectado que salta sobre los supervivientes para inmovilizarlos y atacarlos.</li>
-                <li><strong>Boomer:</strong> Un infectado obeso que vomita sobre los supervivientes, cegándolos y atrayendo a la horda.</li>
-                <li><strong>Witch:</strong> Una infectada que solo ataca si es molestada, pero que es extremadamente peligrosa.</li>
-                <li><strong>Tank:</strong> Un infectado gigantesco y muy fuerte que puede lanzar rocas y destruir objetos.</li>
-            </ul>
-            <img src="https://i.ytimg.com/vi/CEXVIeJ1tMw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBTyakJCmaHGgHc6ihFfhbGXtgMrA"
-            alt="Infectados especiales" style="width:800px;height:auto;">
-        </section>
-        
-        <hr>
-
         <section id="armas">
             <h2>Armas y Equipamiento</h2>
             <p>El arsenal de Left 4 Dead 2 se divide en varias categorías, entre ellas:</p>
@@ -225,15 +217,16 @@
         </section>
     </main>
         -->
-    <footer>
-        <p class="contacto">
-            <em>
-            Página creada por: Gian Franco Apaza Quispe <br>
-            Curso: Introducción al Desarrollo Web - UNSA 2025 <br>
-            Número de contacto: 901140072
-            </em>
-        </p>
-    </footer>
+            <footer>
+                <p class="contacto">
+                    <em>
+                    Página creada por: Gian Franco Apaza Quispe <br>
+                    Curso: Introducción al Desarrollo Web - UNSA 2025 <br>
+                    Número de contacto: 901140072
+                    </em>
+                </p>
+            </footer>
+        </div>
 </body>
 </html>
 

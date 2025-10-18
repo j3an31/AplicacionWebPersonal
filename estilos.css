@@ -4,55 +4,115 @@
     margin: 30px auto;
     border: 4px solid rgba(240, 248, 255, 0.635);
     border-radius: 15px;
+    max-width: 90%; /* Nunca será más ancha que su contenedor */
+    height: auto; /* Mantiene la proporción original */
 }
+
+* {
+  box-sizing: border-box; /* Incluye padding y border dentro del ancho y alto total del elemento */
+  margin: 0; /* Elimina todos los márgenes externos */
+  padding: 0; /* Elimina todos los rellenos internos */
+} 
 
 body {
     background-color: black;
+    display: flex; /* Activa Flexbox para los hijos directos (header, nav, main, footer) */
+    flex-direction: column; /* Los elementos (header, main, footer) van uno debajo del otro */
+    align-items: center; /* Centra horizontalmente los elementos principales de la página */
+} 
+
+main {
+    width: 90%; /* Ocupará el 90% del ancho del navegador */
+    max-width: 1200px; /* No crece más allá de 1200px en pantallas grandes */
+    display: grid; /* Activa CSS Grid para crear el diseño principal de dos columnas */
+    grid-template-columns: 250px 850px 1fr; /* 250px para la barra lateral, el resto para el contenido */
+    margin: 0 6% 0 0;
+}
+
+.navInterna {
+    background-color: rgba(81, 68, 68, 0.525);
+    border: 3px solid rgba(240, 248, 255, 0.635);
+    border-radius: 10px;
+    padding: 20px 15px;
+    margin: 60% 0 0 0;
+    position: sticky;
+    top: 90px; /* Queda fija cuando haces scroll */
+    height: fit-content;
+    width: 100%;
+}
+
+.navInterna li {
+    margin: 10px auto;
+}
+
+.navInterna a {
+    text-decoration: none;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navInterna ul {
+    color: red;
+}
+
+.navInterna a:hover {
+    color: rgb(17, 159, 20);
+}
+
+.contenido {
+    grid-column: 2 / 3; /* Ocupará la segunda columna de la cuadrícula */
+    /* Asegura que el contenido (las sections) dentro de este div se centre */
+    display: flex; /* Activa Flexbox para ordenar las secciones internas verticalmente*/
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente las secciones dentro de su columna Grid */
 }
 
 header {
-    margin: 10px 0; 
+    margin: 10px 0 0 0; 
+    width: 90%; /* Ocupará el 95% del ancho del navegador */
+    max-width: 1400px; /* No crece más allá de 1200px en pantallas grandes */
 }
 
 #inicio {
     text-align: center;
     font-weight: bold;
     font-size: 35px; 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: rgba(81, 68, 68, 0.525);
     border-radius: 15px;
     color: red;
     margin: 5px 0 15px 0;
     padding: 18px 0; 
-    border: 2px;
-    
+    border: 2px; 
 }
 
 #descripcion {
-    color: aliceblue;
+    color: rgba(240, 248, 255, 0.635);
     font-size: 20px; 
 }
 
 nav {
-    font-weight: bold;
     background-color: #195206;
-    padding: 20px;
-    margin: 20px 0px 18px 0px;
-    text-align: center;
+    text-align:center;
+    margin: 0;
+    padding: 28px 0;
     position: sticky; /*Mantiene fija la barra de navegación*/
     top: 0; /*Cuando el borde superior esté a 0 píxeles de distancia 
     del borde superior de la ventana de visualización se comporta como fixed*/
-    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
 }
 
-a {
-    color: aliceblue;
-    font-size: 20px;
-    padding: 15px;
+nav a {
+    padding: 28px 30px;
+    font-weight: bold;
+    font-size: 25px;
     text-decoration: none;
+    color: aliceblue;
 }
 
-a:hover {
+nav a:hover {
     cursor: pointer;
     background-color: rgb(17, 159, 20);
     transition: all 0.7s ease;
@@ -66,14 +126,14 @@ section, footer {
     background-color: rgba(81, 68, 68, 0.525);
     border-radius: 15px;
     border: 4px solid #195206;
-    margin: 30px; 
-
+    margin: 20px 0 10px 0; 
+    width: 95%; /* Se ajustan al contenedor */
 }
 
 h2 {
     font-size: 28px;
     color: red;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     letter-spacing: 0.5px; 
     margin: 13px 0 0 18px;
 }
@@ -86,39 +146,47 @@ p, ul {
     letter-spacing: 0.3px;
 }
 
+ul li {
+    margin: 0 0 0 40px;
+}
+
 .contacto {
     font-size: 16px;
 }
+
+
 /*Lo principalmente usado para la página principal*/
 
 /*Algunos estilos para las otras páginas*/
-div {
+header div {
     color: rgba(240, 248, 255, 0.635);
     font-size: 17px;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 15px;
-
+    margin: 15px auto;
+    text-align: center;
+    width: 95%; /* Ocupará el 95% del ancho del navegador */
+    max-width: 1200px; /* No crece más allá de 1200px en pantallas grandes */
 }
 
 .titulos {
     text-align: center;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 70px; 
     color: red;
     background-color: rgba(81, 68, 68, 0.525);
     border-radius: 15px;
     border: 2px;
-    margin: 25px 0;
-    padding: 15px;
+    margin: 15px auto;
+    padding: 20px 0;
+    width: 98%; /* Ocupará el 95% del ancho del navegador */
+    max-width: 1400px; /* No crece más allá de 1200px en pantallas grandes */
 }
 
 h3 {
     color: rgba(240, 248, 255, 0.635);
     font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 18px;
     letter-spacing: 0.3px; 
 }
-
-
