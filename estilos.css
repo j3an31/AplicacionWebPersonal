@@ -235,3 +235,61 @@ h3 {
 .map-item:hover {
     transform: scale(1.1); 
 }
+
+/* Estilos para formulario */ 
+form {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacio entre los elementos del formulario */
+    background: rgba(255, 255, 255, 0.5); /*capa translúcida */
+    backdrop-filter: blur(100px);          /*aplica el difuminado */
+    padding: 2rem 3rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 1px 7px 30px rgba(0,0,0,0.9); /*Sombreado de form*/
+}
+
+.compForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: left;
+    width: 500px; /*Ancho del form*/
+}
+
+.compForm label, h2 {
+    color: #690505;
+    font-weight: bold;
+}
+
+input, textarea, select {
+    border: black solid 0px ;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: solid 0px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+textarea {
+    resize: none;
+}
+
+.btn:hover {
+    background-color: #888484;
+}
+
