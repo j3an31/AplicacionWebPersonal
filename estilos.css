@@ -175,7 +175,7 @@ footer {
     margin: 10px 0 0 0;
 }
 
-/*Lo principalmente usado para la página principal*/
+/* TODO LO ANTERIOR es lo principalmente usado para la página principal(home)*/
 
 /*Algunos estilos para las otras páginas*/
 header div {
@@ -260,7 +260,7 @@ form {
     width: 500px; /*Ancho del form*/
 }
 
-.compForm label, h2 {
+.compForm label, Form h2 {
     color: #690505;
     font-weight: bold;
 }
@@ -293,3 +293,9 @@ textarea {
     background-color: #888484;
 }
 
+/* Estilos para secciones con flexBox*/
+#flexBox {
+    display: flex;
+    flex-direction: column; /* Los elementos (header, main, footer) van uno debajo del otro */
+
+}
