@@ -9,10 +9,43 @@
 }
 
 * {
-  box-sizing: border-box; /* Incluye padding y border dentro del ancho y alto total del elemento */
-  margin: 0; /* Elimina todos los márgenes externos */
-  padding: 0; /* Elimina todos los rellenos internos */
+    box-sizing: border-box; /* Incluye padding y border dentro del ancho y alto total del elemento */
+    margin: 0; /* Elimina todos los márgenes externos */
+    padding: 0; /* Elimina todos los rellenos internos */
 } 
+
+/* Estilo para video de fondo */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
 
 body {
     background-color: black;
@@ -31,7 +64,7 @@ main {
 
 .navInterna {
     background-color: rgba(81, 68, 68, 0.525);
-    border: 3px solid rgba(240, 248, 255, 0.635);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
     border-radius: 10px;
     padding: 20px 15px;
     margin: 60% 0 0 0;
@@ -74,13 +107,14 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
-    width: 90%; /* Ocupará el 95% del ancho del navegador */
+    background-color: transparent;
+    width: 90%; /* Ocupará el 90% del ancho del navegador */
     max-width: 1400px; /* No crece más allá de 1200px en pantallas grandes */
+    min-height: 100vh; /* Ocupa mínimo toda la altura */
 }
 
 header img {
-    height: 380px;
+    height: 500px;
     width: auto;
 }
 
@@ -104,7 +138,7 @@ header img {
 
 #descripcion {
     color: rgba(240, 248, 255, 0.635);
-    font-size: 20px; 
+    font-size: 17px; 
 }
 
 nav {
@@ -138,8 +172,9 @@ a:visited {
 
 section {
     background-color: rgba(81, 68, 68, 0.525);
-    border-radius: 15px;
-    border: 4px solid #195206;
+    border-radius: 10px;
+    /* box-shadow: 0 0 10px 5px rgb(17, 159, 20); */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     margin: 20px 0 10px 0; 
     width: 95%; /* Se ajustan al contenedor */
 }
