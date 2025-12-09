@@ -214,6 +214,26 @@ footer {
 /* TODO LO ANTERIOR es lo principalmente usado para la página principal(home)*/
 
 /*Algunos estilos para las otras páginas*/
+.titulos {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 150px; 
+    color: #ff0000;
+    text-transform: uppercase; /* Convierte todo el texto a mayúsculas */
+    letter-spacing: 20px;
+    background-color: transparent;
+    text-shadow: 
+        0 0 20px rgba(255, 0, 0, 0.8),
+        0 0 40px rgba(255, 0, 0, 0.6),
+        5px 5px 10px rgba(0, 0, 0, 0.9),
+        -2px -2px 0 #000;
+    margin: 10px auto;
+    padding: 20px 0;
+    width: 98%; /* Ocupará el 95% del ancho del navegador */
+    max-width: 1400px; /* No crece más allá de 1200px en pantallas grandes */
+}
+
 .resumen {
     color: rgba(240, 248, 255, 0.635);
     font-size: 17px;
@@ -224,20 +244,6 @@ footer {
     max-width: 1200px; /* No crece más allá de 1200px en pantallas grandes */
 }
 
-.titulos {
-    text-align: center;
-    font-weight: bold;
-    font-family: 'Roboto', sans-serif;
-    font-size: 70px; 
-    color: red;
-    background-color: rgba(81, 68, 68, 0.525);
-    border-radius: 15px;
-    border: 2px;
-    margin: 15px auto;
-    padding: 20px 0;
-    width: 98%; /* Ocupará el 95% del ancho del navegador */
-    max-width: 1400px; /* No crece más allá de 1200px en pantallas grandes */
-}
 
 h3 {
     color: rgba(240, 248, 255, 0.635);

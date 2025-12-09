@@ -55,6 +55,26 @@ header {
     min-height: 100vh; /* Ocupa mínimo toda la altura */
 }
 
+.titulos {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 150px; 
+    color: #ff0000;
+    text-transform: uppercase; /* Convierte todo el texto a mayúsculas */
+    letter-spacing: 20px;
+    background-color: transparent;
+    text-shadow: 
+        0 0 20px rgba(255, 0, 0, 0.8),
+        0 0 40px rgba(255, 0, 0, 0.6),
+        5px 5px 10px rgba(0, 0, 0, 0.9),
+        -2px -2px 0 #000;
+    margin: 10px auto;
+    padding: 20px 0;
+    width: 98%; /* Ocupará el 95% del ancho del navegador */
+    max-width: 1400px; /* No crece más allá de 1200px en pantallas grandes */
+}
+
 .resumen {
     color: rgba(240, 248, 255, 0.635);
     font-size: 17px;
@@ -94,14 +114,6 @@ a:visited {
     color: rgb(39, 217, 60);
 }
 
-p, ul {
-    color: rgba(240, 248, 255, 0.635);
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 18px;
-    letter-spacing: 0.3px;
-}
-
 .contacto {
     font-size: 16px;
 }
@@ -111,26 +123,6 @@ footer {
     width: 100%;
     text-align: center;
     margin: 10px 0 0 0;
-}
-
-.titulos {
-    text-align: center;
-    font-weight: bold;
-    font-family: 'Impact', 'Arial Black', sans-serif;
-    font-size: 150px; 
-    color: #ff0000;
-    text-transform: uppercase; /* Convierte todo el texto a mayúsculas */
-    letter-spacing: 20px;
-    background-color: transparent;
-    text-shadow: 
-        0 0 20px rgba(255, 0, 0, 0.8),
-        0 0 40px rgba(255, 0, 0, 0.6),
-        5px 5px 10px rgba(0, 0, 0, 0.9),
-        -2px -2px 0 #000;
-    margin: 10px auto;
-    padding: 20px 0;
-    width: 98%; /* Ocupará el 95% del ancho del navegador */
-    max-width: 1400px; /* No crece más allá de 1200px en pantallas grandes */
 }
 
 /* CARRUSEL */
