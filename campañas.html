@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campañas de L4D2</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="css/campañas.css">
 </head>
 <body>
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="Extras/zombies-moviendose.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
     <nav>
         <a href="paginaPersonal.html">Inicio</a>
         <a href="supervivientes.html">Supervivientes</a>
@@ -16,14 +22,49 @@
     </nav>
     <header>
         <h1 class="titulos">Campañas</h1>
+        <div class="resumen">
+            <em>
+                El juego cuenta con 6 campañas normales. También hay una campaña adicional, 
+                pero no tiene nada que ver con la historia
+            </em>
+        </div>
     </header>
-    <div id="galeriaCampañas">
-        <div class="map-item"><img src="https://valvearchive.com/archive/Left%204%20Dead/Left%204%20Dead%202/Art/Posters/Dead_Center.jpg" alt="Dead Center"></div>
-        <div class="map-item"><img src="https://valvearchive.com/archive/Left%204%20Dead/Left%204%20Dead%202/Art/Posters/Dark_Carnival.jpg" alt="Dark Carnival"></div>
-        <div class="map-item"><img src="https://valvearchive.com/archive/Left%204%20Dead/Left%204%20Dead%202/Art/Posters/Swamp_Fever.jpg" alt="Swamp Fever"></div>
-        <div class="map-item"><img src="https://valvearchive.com/archive/Left%204%20Dead/Left%204%20Dead%202/Art/Posters/Hard_Rain.jpg" alt="Hard Rain"></div>
-        <div class="map-item"><img src="https://static.wikia.nocookie.net/left4dead/images/b/b9/Left_4_dead_2_conceptart_2vgaw.jpg/revision/latest?cb=20121223003210&path-prefix=es" alt="The Parish"></div>
-        <div class="map-item"><img src="https://valvearchive.com/archive/Left%204%20Dead/Left%204%20Dead%202/Art/Posters/The_Passing.jpg" alt="The Passing"></div>
-    </div>
+    <main>
+        <div class="carrusel-img">
+        <button class="carrusel-btn izq" onclick="cambiarSlide(-1)">&#10094;</button>
+            <div class="carrusel" id="carrusel">
+                <div class="carrusel-item">
+                    <img src="Extras/mapas-img/Dead-Center.jpeg" alt="Dead Center">
+                </div>
+                <div class="carrusel-item">
+                    <img src="Extras/mapas-img/Dark-Carnival.jpg" alt="Dark Carnival">
+                </div>
+                <div class="carrusel-item">
+                    <img src="Extras/mapas-img/Swamp-Fever.jpeg" alt="Swamp Fever">
+                </div>
+                <div class="carrusel-item">
+                    <img src="Extras/mapas-img/Hard Rain.jpeg" alt="Hard Rain">
+                </div>
+                <div class="carrusel-item">
+                    <img src="Extras/mapas-img/The-Parish.jpeg" alt="The Parish">
+                </div>
+                <div class="carrusel-item">
+                    <img src="Extras/mapas-img/The-Passing.jpg" alt="The Passing">
+                </div>
+            </div>
+        <button class="carrusel-btn der" onclick="cambiarSlide(1)">&#10095;</button>
+        <div class="carrusel-indicadores" id="indicadores"></div>    
+        </div>
+    </main>
+    <footer>
+        <p class="contacto">
+            <em>
+                Página creada por: Gian Franco Apaza Quispe <br>
+                Curso: Introducción al Desarrollo Web - UNSA 2025 <br>
+                Número de contacto: 901140072
+            </em>
+        </p>
+    </footer>
+    <script src="JavaScript/campañas.js"></script>
 </body>
 </html>

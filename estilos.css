@@ -2,7 +2,8 @@
     /* Convierte la imagen en un elemento de bloque para que pueda tener margen */
     display: block;
     margin: 30px auto;
-    border: 4px solid rgba(240, 248, 255, 0.635);
+    /*border: 4px solid rgba(240, 248, 255, 0.635);*/
+    box-shadow: 0 0 10px 5px rgb(17, 159, 20);
     border-radius: 15px;
     max-width: 90%; /* Nunca será más ancha que su contenedor */
     height: auto; /* Mantiene la proporción original */
@@ -181,7 +182,7 @@ section {
 
 h2 {
     font-size: 28px;
-    color: red;
+    color: #ff2b2b;
     font-family: 'Roboto', sans-serif;
     letter-spacing: 0.5px; 
     margin: 13px 0 0 18px;
@@ -213,7 +214,7 @@ footer {
 /* TODO LO ANTERIOR es lo principalmente usado para la página principal(home)*/
 
 /*Algunos estilos para las otras páginas*/
-header div {
+.resumen {
     color: rgba(240, 248, 255, 0.635);
     font-size: 17px;
     font-family: Arial, Helvetica, sans-serif;

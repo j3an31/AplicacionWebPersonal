@@ -1,0 +1,247 @@
+* {
+    box-sizing: border-box; /* Incluye padding y border dentro del ancho y alto total del elemento */
+    margin: 0; /* Elimina todos los márgenes externos */
+    padding: 0; /* Elimina todos los rellenos internos */
+} 
+
+/* Estilo para video de fondo */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+body {
+    background-color: black;
+    display: flex; /* Activa Flexbox para los hijos directos (header, nav, main, footer) */
+    flex-direction: column; /* Los elementos (header, main, footer) van uno debajo del otro */
+    align-items: center; /* Centra horizontalmente los elementos principales de la página */
+} 
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: 90%; /* Ocupará el 90% del ancho del navegador */
+    max-width: 1400px; /* No crece más allá de 1200px en pantallas grandes */
+    min-height: 100vh; /* Ocupa mínimo toda la altura */
+}
+
+.resumen {
+    color: rgba(240, 248, 255, 0.635);
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 15px auto;
+    text-align: center;
+    width: 95%; /* Ocupará el 95% del ancho del navegador */
+    max-width: 1200px; /* No crece más allá de 1200px en pantallas grandes */
+}
+
+nav {
+    background-color: #195206;
+    text-align:center;
+    margin: 0;
+    padding: 28px 0;
+    position: sticky; /*Mantiene fija la barra de navegación*/
+    top: 0; /*Cuando el borde superior esté a 0 píxeles de distancia 
+    del borde superior de la ventana de visualización se comporta como fixed*/
+    width: 100%;
+}
+
+nav a {
+    padding: 28px 30px;
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+nav a:hover {
+    cursor: pointer;
+    background-color: rgb(17, 159, 20);
+    transition: all 0.7s ease;
+}
+
+a:visited {
+    color: rgb(39, 217, 60);
+}
+
+p, ul {
+    color: rgba(240, 248, 255, 0.635);
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 18px;
+    letter-spacing: 0.3px;
+}
+
+.contacto {
+    font-size: 16px;
+}
+
+footer {
+    background-color: #195206;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+
+.titulos {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 150px; 
+    color: #ff0000;
+    text-transform: uppercase; /* Convierte todo el texto a mayúsculas */
+    letter-spacing: 20px;
+    background-color: transparent;
+    text-shadow: 
+        0 0 20px rgba(255, 0, 0, 0.8),
+        0 0 40px rgba(255, 0, 0, 0.6),
+        5px 5px 10px rgba(0, 0, 0, 0.9),
+        -2px -2px 0 #000;
+    margin: 10px auto;
+    padding: 20px 0;
+    width: 98%; /* Ocupará el 95% del ancho del navegador */
+    max-width: 1400px; /* No crece más allá de 1200px en pantallas grandes */
+}
+
+/* CARRUSEL */
+.carrusel-img {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 40px 0;
+}
+
+.carrusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    overflow: visible; /* Permite ver las imágenes laterales */
+}
+
+.carrusel-item {
+    flex-shrink: 0;
+    width: 400px;
+    height: 550px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 4px solid #195206;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.carrusel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Imagen central (activa) */
+.carrusel-item.active {
+    transform: scale(1.1);
+    border-color: #00ff00;
+    box-shadow: 
+        0 0 30px rgba(0, 255, 0, 0.6),
+        0 10px 40px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    opacity: 1;
+}
+
+/* Imágenes laterales (desvanecidas) */
+.carrusel-item:not(.active) {
+    opacity: 0.4;
+    filter: blur(2px);
+    transform: scale(0.85);
+}
+
+.carrusel-item:not(.active):hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+/* BOTONES */
+.carrusel-btn {
+    background-color: rgba(25, 82, 6, 0.9);
+    border: 3px solid #00ff00;
+    color: #00ff00;
+    font-size: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    transition: all 0.3s ease;
+}
+
+.carrusel-btn:hover {
+    background-color: #00ff00;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+}
+
+.izq { left: -30px; }
+.der { right: -30px; }
+
+/* Indicadores (puntos) */
+.carrusel-indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.indicador {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid #195206;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicador:hover {
+    background-color: rgba(0, 255, 0, 0.5);
+}
+
+.indicador.active {
+    background-color: #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+    transform: scale(1.3);
+}
