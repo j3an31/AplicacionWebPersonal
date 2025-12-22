@@ -122,7 +122,6 @@ nombre.addEventListener("blur", validarNombre);
 password.addEventListener("blur", validarPassword);
 confirmar.addEventListener("blur", validarConfirmar);
 
-
 // Validar también al escribir en confirmar
 confirmar.addEventListener("input", function() {
     if (confirmar.value.length > 0) {
@@ -140,15 +139,43 @@ form.addEventListener("submit", function(e) {
     const passwordValido = validarPassword();
     const confirmarValido = validarConfirmar();
     
-    // Si todos son válidos, mostrar alert y limpiar formulario
+    // Si todos son válidos, enviar al servidor
     if (correoValido && nombreValido && passwordValido && confirmarValido) {
-        alert("✅ ¡Registro exitoso!\n" +
-              "📧 Correo: " + correo.value + "\n" +
-              "👤 Usuario: " + nombre.value + "\n" +
-              "🔒 Contraseña: " + "*".repeat(password.value.length) + "\n\n" +
-              "¡Bienvenido a la comunidad de supervivientes! 🧟‍♂️");
         
-        form.reset();
+        // Prepara los datos para enviar
+        const datos = new URLSearchParams();
+        datos.append('correo', correo.value);
+        datos.append('nombre', nombre.value);
+        datos.append('password', password.value);
+        
+        // Envia al servidor Python
+        fetch('http://localhost:8000/registro', {
+            method: 'POST',
+            body: datos
+        })
+        .then(response => response.text())
+        .then(data => {
+            if (data === 'OK') {
+                alert("✅ ¡Registro exitoso!\n" +
+                      "📧 Correo: " + correo.value + "\n" +
+                      "👤 Usuario: " + nombre.value + "\n\n" +
+                      "¡Bienvenido a la comunidad de supervivientes! 🧟‍♂️");
+                
+                // Limpia el formulario
+                form.reset();
+                limpiarError(correo);
+                limpiarError(nombre);
+                limpiarError(password);
+                limpiarError(confirmar);
+            } else {
+                alert("❌ Error al guardar el registro. Intenta de nuevo.");
+            }
+        })
+        .catch(error => {
+            alert("⚠️ Error de conexión. Asegúrate de que el servidor esté corriendo en http://localhost:8000");
+            console.log("Error:", error);
+        });
+        
     } else {
         alert("⚠️ Por favor, corrige los errores en el formulario");
     }
