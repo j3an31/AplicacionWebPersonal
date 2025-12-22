@@ -44,7 +44,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
 
@@ -311,11 +311,4 @@ textarea {
 
 .btn:hover {
     background-color: #888484;
-}
-
-/* Estilos para secciones con flexBox*/
-#flexBox {
-    display: flex;
-    flex-direction: column; /* Los elementos (header, main, footer) van uno debajo del otro */
-
 }
