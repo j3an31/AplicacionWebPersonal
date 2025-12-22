@@ -1,57 +1,66 @@
-let slideActual = 1; // Empieza en el segundo (índice 1)
-const items = document.querySelectorAll('.carrusel-item');
-const totalSlides = items.length;
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".carrusel-item");
+    const indicadores = document.querySelectorAll(".indicador");
+    const btnAnterior = document.getElementById("btnAnterior");
+    const btnSiguiente = document.getElementById("btnSiguiente");
+    
+    let slideActual = 0;
+    const totalSlides = slides.length;
 
-// Crea los indicadores dinámicamente
-function crearIndicadores() {
-    const contenedor = document.getElementById('indicadores');
-    for (let i = 0; i < totalSlides; i++) {
-        const indicador = document.createElement('span');
-        indicador.className = 'indicador';
-        if (i === slideActual) indicador.classList.add('active');
-        indicador.onclick = () => irASlide(i);
-        contenedor.appendChild(indicador);
+    function mostrarSlide(n) {
+        // Oculta todos los slides
+        slides.forEach(slide => {
+            slide.classList.remove("active");
+        });
+        
+        // Desactiva todos los indicadores
+        indicadores.forEach(ind => {
+            ind.classList.remove("active");
+        });
+        
+        // Ajusta índice si está fuera de rango (navegación circular)
+        if (n >= totalSlides) {
+            slideActual = 0;
+        } else if (n < 0) {
+            slideActual = totalSlides - 1;
+        } else {
+            slideActual = n;
+        }
+        
+        // Muestra slide actual
+        slides[slideActual].classList.add("active");
+        indicadores[slideActual].classList.add("active");
+        
+        // Scroll suave al inicio del carrusel
+        document.querySelector(".carrusel-container").scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+        });
     }
-}
 
-function actualizarCarrusel() {
-    // Remueve la clase active de todos
-    items.forEach(item => item.classList.remove('active'));
-    
-    // Agrega active al actual
-    items[slideActual].classList.add('active');
-    
-    // Centra el item activo
-    const carrusel = document.getElementById('carrusel');
-    const itemActivo = items[slideActual];
-    const offset = itemActivo.offsetLeft - (carrusel.offsetWidth / 2) + (itemActivo.offsetWidth / 2);
-    
-    carrusel.scrollTo({
-        left: offset,
-        behavior: 'smooth'
+    // Botón siguiente
+    btnSiguiente.addEventListener("click", function() {
+        mostrarSlide(slideActual + 1);
     });
-    
-    // Actualiza indicadores
-    document.querySelectorAll('.indicador').forEach((ind, i) => {
-        ind.classList.toggle('active', i === slideActual);
+
+    // Botón anterior
+    btnAnterior.addEventListener("click", function() {
+        mostrarSlide(slideActual - 1);
     });
-}
 
-function cambiarSlide(direccion) {
-    slideActual += direccion;
-    
-    // Loop infinito
-    if (slideActual < 0) slideActual = totalSlides - 1;
-    if (slideActual >= totalSlides) slideActual = 0;
-    
-    actualizarCarrusel();
-}
+    // Click en indicadores
+    indicadores.forEach((indicador, index) => {
+        indicador.addEventListener("click", function() {
+            mostrarSlide(index);
+        });
+    });
 
-function irASlide(indice) {
-    slideActual = indice;
-    actualizarCarrusel();
-}
-
-// Inicializa
-crearIndicadores();
-actualizarCarrusel();
+    // Navegación con teclado (flechas izquierda/derecha)
+    document.addEventListener("keydown", function(e) {
+        if (e.key === "ArrowLeft") {
+            mostrarSlide(slideActual - 1);
+        } else if (e.key === "ArrowRight") {
+            mostrarSlide(slideActual + 1);
+        }
+    });
+});

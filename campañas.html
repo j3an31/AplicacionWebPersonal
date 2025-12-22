@@ -30,14 +30,19 @@
         </div>
     </header>
     <main>
-        <div class="carrusel-img">
-        <button class="carrusel-btn izq" onclick="cambiarSlide(-1)">&#10094;</button>
-            <div class="carrusel" id="carrusel">
-                <div class="carrusel-item">
+        <div class="carrusel-container">
+            <!-- Botón Anterior -->
+            <button class="carrusel-btn btn-anterior" id="btnAnterior">
+                <span>❮</span>
+            </button>
+
+            <!-- Contenido del Carrusel -->
+            <div class="carrusel-wrapper">
+                <div class="carrusel-item active">
                     <img src="Extras/mapas-img/Dead-Center.jpeg" alt="Dead Center">
                 </div>
                 <div class="carrusel-item">
-                    <img src="Extras/mapas-img/Dark-Carnival.jpg" alt="Dark Carnival">
+                    <img src="Extras/mapas-img/Dark-Carnival.webp" alt="Dark Carnival">
                 </div>
                 <div class="carrusel-item">
                     <img src="Extras/mapas-img/Swamp-Fever.jpeg" alt="Swamp Fever">
@@ -52,16 +57,29 @@
                     <img src="Extras/mapas-img/The-Passing.jpg" alt="The Passing">
                 </div>
             </div>
-        <button class="carrusel-btn der" onclick="cambiarSlide(1)">&#10095;</button>
-        <div class="carrusel-indicadores" id="indicadores"></div>    
+
+            <!-- Botón Siguiente -->
+            <button class="carrusel-btn btn-siguiente" id="btnSiguiente">
+                <span>❯</span>
+            </button>
+
+            <!-- Indicadores -->
+            <div class="carrusel-indicadores">
+                <span class="indicador active" data-slide="0"></span>
+                <span class="indicador" data-slide="1"></span>
+                <span class="indicador" data-slide="2"></span>
+                <span class="indicador" data-slide="3"></span>
+                <span class="indicador" data-slide="4"></span>
+                <span class="indicador" data-slide="5"></span>
+            </div>
         </div>
     </main>
     <footer>
         <p class="contacto">
             <em>
                 Página creada por: Gian Franco Apaza Quispe <br>
-                Curso: Introducción al Desarrollo Web - UNSA 2025 <br>
-                Número de contacto: 901140072
+                Curso: Introducción al Desarrollo Web <br>
+                Correo para consultas: gapazaqui@unsa.edu.pe
             </em>
         </p>
     </footer>
