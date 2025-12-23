@@ -1,14 +1,3 @@
-.imagen-centrada {
-    /* Convierte la imagen en un elemento de bloque para que pueda tener margen */
-    display: block;
-    margin: 30px auto;
-    /*border: 4px solid rgba(240, 248, 255, 0.635);*/
-    box-shadow: 0 0 10px 5px rgb(17, 159, 20);
-    border-radius: 15px;
-    max-width: 90%; /* Nunca será más ancha que su contenedor */
-    height: auto; /* Mantiene la proporción original */
-}
-
 * {
     box-sizing: border-box; /* Incluye padding y border dentro del ancho y alto total del elemento */
     margin: 0; /* Elimina todos los márgenes externos */
@@ -55,54 +44,6 @@ body {
     align-items: center; /* Centra horizontalmente los elementos principales de la página */
 } 
 
-main {
-    width: 90%; /* Ocupará el 90% del ancho del navegador */
-    max-width: 1200px; /* No crece más allá de 1200px en pantallas grandes */
-    display: grid; /* Activa CSS Grid para crear el diseño principal de dos columnas */
-    grid-template-columns: 250px 850px 1fr; /* 250px para la barra lateral, el resto para el contenido */
-    margin: 0 6% 0 0;
-}
-
-.navInterna {
-    background-color: rgba(81, 68, 68, 0.525);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
-    border-radius: 10px;
-    padding: 20px 15px;
-    margin: 60% 0 0 0;
-    position: sticky;
-    top: 90px; /* Queda fija cuando haces scroll */
-    height: fit-content;
-    width: 100%;
-}
-
-.navInterna li {
-    margin: 10px auto;
-}
-
-.navInterna a {
-    text-decoration: none;
-    color: red;
-    font-size: 20px;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.navInterna ul {
-    color: red;
-}
-
-.navInterna a:hover {
-    color: rgb(17, 159, 20);
-}
-
-.contenido {
-    grid-column: 2 / 3; /* Ocupará la segunda columna de la cuadrícula */
-    /* Asegura que el contenido (las sections) dentro de este div se centre */
-    display: flex; /* Activa Flexbox para ordenar las secciones internas verticalmente*/
-    flex-direction: column;
-    align-items: center; /* Centra horizontalmente las secciones dentro de su columna Grid */
-}
-
 header {
     display: flex;
     flex-direction: column;
@@ -114,34 +55,6 @@ header {
     min-height: 100vh; /* Ocupa mínimo toda la altura */
 }
 
-header img {
-    height: 500px;
-    width: auto;
-}
-
-.contenedorLogo {
-    margin: 20px 0 0 8%;
-    transition: transform 0.5s ease; /* La propiedad transform será animada*/
-}
-
-.contenedorLogo:hover {
-    transform: scale(1.2); 
-}
-
-#inicio {
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px; 
-    font-family: 'Roboto', sans-serif;
-    color: red;
-    margin: -5% 0 0 0;
-}
-
-#descripcion {
-    color: rgba(240, 248, 255, 0.635);
-    font-size: 17px; 
-}
-
 nav {
     background-color: #195206;
     text-align:center;
@@ -151,6 +64,7 @@ nav {
     top: 0; /*Cuando el borde superior esté a 0 píxeles de distancia 
     del borde superior de la ventana de visualización se comporta como fixed*/
     width: 100%;
+    z-index: 1;
 }
 
 nav a {
@@ -171,33 +85,12 @@ a:visited {
     color: rgb(39, 217, 60);
 }
 
-section {
-    background-color: rgba(81, 68, 68, 0.525);
-    border-radius: 10px;
-    /* box-shadow: 0 0 10px 5px rgb(17, 159, 20); */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    margin: 20px 0 10px 0; 
-    width: 95%; /* Se ajustan al contenedor */
-}
-
-h2 {
-    font-size: 28px;
-    color: #ff2b2b;
-    font-family: 'Roboto', sans-serif;
-    letter-spacing: 0.5px; 
-    margin: 13px 0 0 18px;
-}
-
-p, ul {
+p {
     color: rgba(240, 248, 255, 0.635);
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     margin: 18px;
     letter-spacing: 0.3px;
-}
-
-ul li {
-    margin: 0 0 0 40px;
 }
 
 .contacto {
@@ -214,9 +107,6 @@ footer {
     margin: 10px 0 0 0;
 }
 
-/* TODO LO ANTERIOR es lo principalmente usado para la página principal(home)*/
-
-/*Algunos estilos para las otras páginas*/
 .titulos {
     text-align: center;
     font-weight: bold;
@@ -247,11 +137,93 @@ footer {
     max-width: 1200px; /* No crece más allá de 1200px en pantallas grandes */
 }
 
+/* EFECTO SLIDES INFINITOS */
 
-h3 {
-    color: rgba(240, 248, 255, 0.635);
-    font-size: 18px;
-    font-family: 'Roboto', sans-serif;
-    margin: 18px;
-    letter-spacing: 0.3px; 
+#presentacionArmas, #presentacionObjetos {
+    padding: 40px 0;
+}
+
+#presentacionArmas h2, #presentacionObjetos h2 {
+    font-weight: bold;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 50px; 
+    color: #64e514;
+    text-transform: uppercase; /* Convierte todo el texto a mayúsculas */
+    letter-spacing: 8px;
+    background-color: transparent;
+    text-shadow: 
+        0 0 20px rgba(9, 161, 24, 0.8),
+        0 0 40px rgba(82, 240, 14, 0.6),
+        5px 5px 10px rgba(0, 0, 0, 0.9),
+        -2px -2px 0 #000;
+}
+
+.tarjeta {
+    flex-shrink: 0;
+    width: 350px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    padding: 15px;
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+    border-radius: 8px;
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3% 0;
+    background: whitesmoke;
+    border-radius: 15px;
+    gap: 20px;
+    width: 95%; 
+    max-width: 1400px;
+    margin: 4% auto 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.galeria::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.galeria-track {
+    display: flex;
+    gap: 20px;
+    animation: scrollInfinito 30s linear infinite;
+    width: max-content;
+    will-change: transform;
+}
+
+.galeria-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollInfinito {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-270px * 9));
+    }
 }
