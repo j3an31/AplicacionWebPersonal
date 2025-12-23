@@ -51,12 +51,12 @@ header {
     align-items: center;
     background-color: transparent;
     width: 90%; /* Ocupará el 90% del ancho del navegador */
-    max-width: 1400px; /* No crece más allá de 1200px en pantallas grandes */
+    max-width: 1400px; /* No crece más allá de 1400px en pantallas grandes */
     min-height: 100vh; /* Ocupa mínimo toda la altura */
 }
 
 nav {
-    background-color: #195206;
+    background: linear-gradient(180deg, rgba(15, 50, 10, 1), rgba(25, 82, 6, 1));
     text-align:center;
     margin: 0;
     padding: 28px 0;
@@ -64,6 +64,12 @@ nav {
     top: 0; /*Cuando el borde superior esté a 0 píxeles de distancia 
     del borde superior de la ventana de visualización se comporta como fixed*/
     width: 100%;
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.8),
+        0 0 30px rgba(0, 255, 0, 0.3),
+        inset 0 -2px 10px rgba(0, 255, 0, 0.2);
+    border-top: 2px solid rgba(0, 255, 0, 0.5);
+    border-bottom: 2px solid rgba(0, 255, 0, 0.5);
     z-index: 1;
 }
 
@@ -72,7 +78,10 @@ nav a {
     font-weight: bold;
     font-size: 25px;
     text-decoration: none;
-    color: aliceblue;
+    color: #00FF00;
+    text-shadow: 
+        0 0 10px rgba(0, 255, 0, 0.8),
+        0 0 20px rgba(0, 255, 0, 0.4);
 }
 
 nav a:hover {
@@ -82,7 +91,7 @@ nav a:hover {
 }
 
 a:visited {
-    color: rgb(39, 217, 60);
+    color: rgb(57, 255, 20);
 }
 
 p {
@@ -101,7 +110,13 @@ p {
 }
 
 footer {
-    background-color: #195206;
+    background: linear-gradient(180deg, rgba(15, 50, 10, 0.98), rgba(25, 82, 6, 0.98));
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.8),
+        0 0 30px rgba(0, 255, 0, 0.3),
+        inset 0 -2px 10px rgba(0, 255, 0, 0.2);
+    border-top: 2px solid rgba(0, 255, 0, 0.5);
+    border-bottom: 2px solid rgba(0, 255, 0, 0.5);
     width: 100%;
     text-align: center;
     margin: 10px 0 0 0;
@@ -123,13 +138,13 @@ footer {
         -2px -2px 0 #000;
     margin: 10px auto;
     padding: 20px 0;
-    width: 98%; /* Ocupará el 95% del ancho del navegador */
+    width: 98%; /* Ocupará el 98% del ancho del navegador */
     max-width: 1400px; /* No crece más allá de 1200px en pantallas grandes */
 }
 
 .resumen {
     color: rgba(240, 248, 255, 0.635);
-    font-size: 17px;
+    font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     margin: 15px auto;
     text-align: center;
@@ -161,7 +176,7 @@ footer {
 .tarjeta {
     flex-shrink: 0;
     width: 350px;
-    background: white;
+    background: whitesmoke;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -186,7 +201,7 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     padding: 3% 0;
-    background: whitesmoke;
+    background: rgb(162, 149, 149);
     border-radius: 15px;
     gap: 20px;
     width: 95%; 
@@ -218,6 +233,17 @@ footer {
 .galeria-track:hover {
     animation-play-state: paused;
 }
+
+/* Animación de desplazamiento infinito para un carrusel horizontal.
+   Mueve el contenido de izquierda a derecha continuamente.
+   
+   - 0%: Posición inicial (sin desplazamiento)
+   - 100%: Desplaza todo el contenido hacia la izquierda
+   - calc(-270px * 9): Calcula el desplazamiento total basado en:
+     * 270px: ancho de cada elemento individual
+     * 9: cantidad total de elementos a desplazar
+     * El valor negativo (-) hace que se mueva hacia la izquierda
+*/
 
 @keyframes scrollInfinito {
     0% {

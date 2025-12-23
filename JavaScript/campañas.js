@@ -7,6 +7,24 @@ document.addEventListener("DOMContentLoaded", () => {
     let slideActual = 0;
     const totalSlides = slides.length;
 
+    /* ------------------------------------------------------------------------
+       FUNCIÓN PRINCIPAL: mostrarSlide(n)
+       ------------------------------------------------------------------------
+       Controla qué slide se muestra en el carrusel
+       
+       PARÁMETRO:
+       - n: índice del slide a mostrar
+       
+       LÓGICA:
+       1. Oculta todos los slides (remueve clase "active")
+       2. Desactiva todos los indicadores
+       3. Ajusta el índice para navegación circular:
+          - Si n >= totalSlides → vuelve al inicio (slideActual = 0)
+          - Si n < 0 → va al final (slideActual = totalSlides - 1)
+       4. Activa el slide e indicador correspondiente
+       5. Hace scroll suave para mantener el carrusel visible en pantalla
+       ------------------------------------------------------------------------ */
+       
     function mostrarSlide(n) {
         // Oculta todos los slides
         slides.forEach(slide => {

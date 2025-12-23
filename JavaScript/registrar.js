@@ -5,8 +5,26 @@ const password = document.getElementById("password");
 const confirmar = document.getElementById("confirmar");
 
 const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// Expresión regular para validar formato de correo electrónico
+// ^[^\s@]+ : Inicia con uno o más caracteres que NO sean espacios ni @
+// @ : Debe contener obligatoriamente un símbolo @
+// [^\s@]+ : Seguido de uno o más caracteres que NO sean espacios ni @
+// \. : Debe contener un punto literal
+// [^\s@]+$ : Termina con uno o más caracteres que NO sean espacios ni @
+// Ejemplo válido: usuario@dominio.com
 const regexNombre = /^[a-zA-Z][a-zA-Z0-9_]{2,9}$/;
+// Expresión regular para validar nombre de usuario
+// ^[a-zA-Z] : Debe iniciar obligatoriamente con una letra (mayúscula o minúscula)
+// [a-zA-Z0-9_]{2,9} : Seguido de 2 a 9 caracteres que pueden ser letras, números o guión bajo
+// Total: entre 3 y 10 caracteres (1 letra inicial + 2 a 9 caracteres adicionales)
+// Ejemplo válido: Usuario123, Admin_01
 const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,10}$/;
+// Expresión regular para validar contraseña segura
+// (?=.*[a-z]) : Debe contener al menos una letra minúscula (lookahead positivo)
+// (?=.*[A-Z]) : Debe contener al menos una letra mayúscula (lookahead positivo)
+// (?=.*\d) : Debe contener al menos un dígito numérico (lookahead positivo)
+// .{6,10} : Longitud total entre 6 y 10 caracteres
+// Ejemplo válido: Pass123, Abc123def
 
 // Función para mostrar errores
 function mostrarError(input, mensaje) {
