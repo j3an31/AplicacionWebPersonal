@@ -232,6 +232,7 @@ class ServidorHTTP(BaseHTTPRequestHandler):
         return """
         <html>
         <head>
+            <meta charset="UTF-8">
             <title>Panel de Administracion</title>
             <style>
                 body {
@@ -265,16 +266,22 @@ class ServidorHTTP(BaseHTTPRequestHandler):
                 }
                 table {
                     margin-top: 20px;
+                    width: 100%;
                 }
                 th, td {
                     padding: 10px;
                     text-align: left;
+                    color: black;
+                }
+                th {
+                    background: #3498db;
+                    color: white;
                 }
             </style>
         </head>
         <body>
             <div class="contenedor">
-                <h1>Panel de Administracion</h1>
+                <h1>Panel de Administración</h1>
                 <p>Ingresa la contraseña para ver los registros:</p>
                 <input type="password" id="password" placeholder="Contraseña">
                 <button onclick="verificar()">Ver Registros</button>
@@ -291,7 +298,6 @@ class ServidorHTTP(BaseHTTPRequestHandler):
                         return;
                     }
                     
-                    // Enviamos la contraseña al servidor
                     fetch('/verificar-admin', {
                         method: 'POST',
                         headers: {
